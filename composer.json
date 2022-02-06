@@ -1,0 +1,29 @@
+{
+  "autoload": {
+    "psr-4": {
+      "AMartinNo1\\SocialShare\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AMartinNo1\\SocialShare\\Tests\\": "tests"
+    }
+  },
+  "homepage": "https://github.com/AMartinNo1/php-social-share/",
+  "keywords": [
+    "social networks",
+    "share links",
+    "cookieless"
+  ],
+  "license": "MIT",
+  "name": "amartinno1/social-share",
+  "require": {},
+  "scripts": {
+    "normalize": "./bin/json-normalize composer.json 2"
+  },
+  "support": {
+    "issues": "https://github.com/AMartinNo1/php-social-share/issues",
+    "source": "https://github.com/AMartinNo1/php-social-share"
+  },
+  "type": "library"
+}
