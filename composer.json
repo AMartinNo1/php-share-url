@@ -1,12 +1,12 @@
 {
   "autoload": {
     "psr-4": {
-      "AMartinNo1\\SocialShare\\": "src"
+      "Nostadt\\ShareUrl\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "AMartinNo1\\SocialShare\\Tests\\": "tests"
+      "Nostadt\\ShareUrl\\Tests\\": "tests"
     }
   },
   "homepage": "https://github.com/AMartinNo1/php-social-share/",
@@ -16,7 +16,7 @@
     "cookieless"
   ],
   "license": "MIT",
-  "name": "amartinno1/social-share",
+  "name": "nostadt/share-url",
   "require-dev": {
     "phpstan/phpstan": "^1.4",
     "phpunit/phpunit": "^9.5"
