@@ -18,11 +18,13 @@
   "license": "MIT",
   "name": "amartinno1/social-share",
   "require-dev": {
-    "phpstan/phpstan": "^1.4"
+    "phpstan/phpstan": "^1.4",
+    "phpunit/phpunit": "^9.5"
   },
   "scripts": {
     "normalize": "./bin/json-normalize composer.json 2",
-    "phpstan": "phpstan analyse --level 9 src tests"
+    "phpstan": "phpstan analyse --level 9 src tests",
+    "test:unit": "phpunit"
   },
   "support": {
     "issues": "https://github.com/AMartinNo1/php-social-share/issues",
