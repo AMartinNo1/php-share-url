@@ -9,7 +9,7 @@
       "Nostadt\\ShareUrl\\Tests\\": "tests"
     }
   },
-  "homepage": "https://github.com/AMartinNo1/php-social-share/",
+  "homepage": "https://github.com/nostadt/php-share-url/",
   "keywords": [
     "social networks",
     "share links",
@@ -27,8 +27,8 @@
     "test:unit": "phpunit"
   },
   "support": {
-    "issues": "https://github.com/AMartinNo1/php-social-share/issues",
-    "source": "https://github.com/AMartinNo1/php-social-share"
+    "issues": "https://github.com/nostadt/php-share-url/issues",
+    "source": "https://github.com/nostadt/php-share-url/"
   },
   "type": "library"
 }
