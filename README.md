@@ -1,5 +1,5 @@
 # PHP Share URL
-[![CI Process](https://github.com/AMartinNo1/php-social-share/actions/workflows/default.yml/badge.svg)](https://github.com/AMartinNo1/php-social-share/actions/workflows/default.yml)
+[![CI Process](https://github.com/nostadt/php-share-url/actions/workflows/default.yml/badge.svg)](https://github.com/nostadt/php-share-url/actions/workflows/default.yml)
 
 This PHP package provides pure classes, to generate share-urls for social networks and messengers.
 
