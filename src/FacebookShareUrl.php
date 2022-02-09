@@ -7,7 +7,7 @@ namespace Nostadt\ShareUrl;
 /**
  * @see https://www.facebook.com/brand/resources/facebookapp/logo
  */
-final class Facebook
+final class FacebookShareUrl
 {
     public function __construct(private string $url)
     {

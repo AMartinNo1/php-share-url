@@ -8,7 +8,7 @@ namespace Nostadt\ShareUrl;
  * @see https://core.telegram.org/widgets/share#custom-buttons
  * @see https://telegram.org/tour/screenshots
  */
-final class Telegram
+final class TelegramShareUrl
 {
     public function __construct(private string $url, private string $text)
     {

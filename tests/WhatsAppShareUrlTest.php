@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace Nostadt\ShareUrl\Tests;
 
-use Nostadt\ShareUrl\WhatsApp;
+use Nostadt\ShareUrl\WhatsAppShareUrl;
 use PHPUnit\Framework\TestCase;
 
-class WhatsAppTest extends TestCase
+class WhatsAppShareUrlTest extends TestCase
 {
     /**
      * @return void
-     * @covers \Nostadt\ShareUrl\WhatsApp
+     * @covers \Nostadt\ShareUrl\WhatsAppShareUrl
      */
     public function testClass(): void
     {
         self::assertSame(
             'https://wa.me/?text=https%3A%2F%2Flocalhost%3Funit%3Dtest',
-            (string)(new WhatsApp('https://localhost?unit=test'))
+            (string)(new WhatsAppShareUrl('https://localhost?unit=test'))
         );
     }
 }
