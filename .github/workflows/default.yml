@@ -36,13 +36,35 @@ jobs:
 
   phpunit:
     runs-on: ubuntu-20.04
-    name: PHPUnit
+    name: PHPUnit with PHP 8.0
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Switch default PHP Version to 8.0
         run: sudo update-alternatives --set php /usr/bin/php8.0
+
+      - name: Print PHP version
+        run: php --version
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: PHPStan
+        run: composer test:unit
+
+  phpunit81:
+    runs-on: ubuntu-20.04
+    name: PHPUnit with PHP 8.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Switch default PHP Version to 8.1
+        run: sudo update-alternatives --set php /usr/bin/php8.1
+
+      - name: Print PHP version
+        run: php --version
 
       - name: Install Composer dependencies
         run: composer install
