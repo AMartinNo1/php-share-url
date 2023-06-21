@@ -1,5 +1,7 @@
 # PHP Share URL
 [![CI Process](https://github.com/nostadt/php-share-url/actions/workflows/default.yml/badge.svg)](https://github.com/nostadt/php-share-url/actions/workflows/default.yml)
+[![packagist.org](https://img.shields.io/packagist/v/nostadt/share-url)](https://packagist.org/packages/nostadt/share-url)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/amartinno1/5)
 
 This PHP package provides pure classes, to generate share-urls for social networks and messengers.  
 For an up-to-date list of supported targets have a look at the [src](https://github.com/nostadt/php-share-url/tree/development/src)-directory.
