@@ -35,58 +35,28 @@ jobs:
         run: composer normalize
 
   phpunit:
+    strategy:
+      matrix:
+        version:
+          - /usr/bin/php8.0
+          - /usr/bin/php8.1
+          - /usr/bin/php8.2
     runs-on: ubuntu-20.04
-    name: PHPUnit with PHP 8.0
+    name: "PHPUnit with ${{ matrix.version }}"
     steps:
-      - name: Checkout
+      - name: "Checkout"
         uses: actions/checkout@v3
 
-      - name: Switch default PHP Version to 8.0
-        run: sudo update-alternatives --set php /usr/bin/php8.0
+      - name: "Switch default PHP to: ${{ matrix.version }}"
+        run: sudo update-alternatives --set php ${{ matrix.version }}
 
-      - name: Print PHP version
-        run: php --version
-
-      - name: Install Composer dependencies
+      - name: "Install Composer dependencies"
         run: composer install
 
-      - name: PHPStan
-        run: composer test:unit
+      - name: "Print versions"
+        run: |
+          php --version
+          vendor/bin/phpunit --version
 
-  phpunit81:
-    runs-on: ubuntu-20.04
-    name: PHPUnit with PHP 8.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Switch default PHP Version to 8.1
-        run: sudo update-alternatives --set php /usr/bin/php8.1
-
-      - name: Print PHP version
-        run: php --version
-
-      - name: Install Composer dependencies
-        run: composer install
-
-      - name: PHPStan
-        run: composer test:unit
-
-  phpunit82:
-    runs-on: ubuntu-20.04
-    name: PHPUnit with PHP 8.2
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Switch default PHP Version to 8.2
-        run: sudo update-alternatives --set php /usr/bin/php8.2
-
-      - name: Print PHP version
-        run: php --version
-
-      - name: Install Composer dependencies
-        run: composer install
-
-      - name: PHPStan
+      - name: "PHPUnit"
         run: composer test:unit
