@@ -5,14 +5,12 @@ declare(strict_types=1);
 namespace Nostadt\ShareUrl\Tests;
 
 use Nostadt\ShareUrl\ThreemaShareUrl;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(ThreemaShareUrl::class)]
 class ThreemaShareUrlTest extends TestCase
 {
-    /**
-     * @return void
-     * @covers \Nostadt\ShareUrl\ThreemaShareUrl
-     */
     public function testClass(): void
     {
         self::assertSame(

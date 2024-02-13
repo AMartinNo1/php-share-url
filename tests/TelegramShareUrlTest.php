@@ -5,14 +5,12 @@ declare(strict_types=1);
 namespace Nostadt\ShareUrl\Tests;
 
 use Nostadt\ShareUrl\TelegramShareUrl;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(TelegramShareUrl::class)]
 class TelegramShareUrlTest extends TestCase
 {
-    /**
-     * @return void
-     * @covers \Nostadt\ShareUrl\TelegramShareUrl
-     */
     public function testClass(): void
     {
         self::assertSame(

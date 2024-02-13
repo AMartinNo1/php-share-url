@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Nostadt\ShareUrl\Tests;
 
 use Nostadt\ShareUrl\XShareUrl;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(XShareUrl::class)]
 class XShareUrlTest extends TestCase
 {
-    /**
-     * @covers \Nostadt\ShareUrl\XShareUrl
-     * @dataProvider objectProvider
-     */
+    #[DataProvider('objectProvider')]
     public function testClass(XShareUrl $subject, string $expectation): void
     {
         self::assertSame($expectation, $subject->__toString());
