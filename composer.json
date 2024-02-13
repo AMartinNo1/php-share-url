@@ -18,16 +18,15 @@
   "license": "MIT",
   "name": "nostadt/share-url",
   "require": {
-    "php": ">=8.0"
+    "php": ">=8.1"
   },
   "require-dev": {
     "phpstan/phpstan": "^1.10.50",
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^10"
   },
   "scripts": {
     "normalize": "./bin/json-normalize composer.json 2",
-    "phpstan": "phpstan analyse --level 9 src tests",
-    "test:unit": "phpunit"
+    "phpstan": "phpstan analyse --level 9 src tests"
   },
   "support": {
     "issues": "https://github.com/nostadt/php-share-url/issues",

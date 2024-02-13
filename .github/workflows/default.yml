@@ -9,8 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Switch default PHP Version to 8.0
-        run: sudo update-alternatives --set php /usr/bin/php8.0
+      - name: Switch default PHP Version to 8.3
+        run: sudo update-alternatives --set php /usr/bin/php8.3
 
       - name: Install Composer dependencies
         run: composer install
@@ -25,8 +25,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Switch default PHP Version to 8.0
-        run: sudo update-alternatives --set php /usr/bin/php8.0
+      - name: Switch default PHP Version to 8.3
+        run: sudo update-alternatives --set php /usr/bin/php8.3
 
       - name: Install Composer dependencies
         run: composer install
@@ -38,7 +38,6 @@ jobs:
     strategy:
       matrix:
         version:
-          - /usr/bin/php8.0
           - /usr/bin/php8.1
           - /usr/bin/php8.2
           - /usr/bin/php8.3
@@ -60,4 +59,4 @@ jobs:
           vendor/bin/phpunit --version
 
       - name: "PHPUnit"
-        run: composer test:unit
+        run: vendor/bin/phpunit
