@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(TelegramShareUrl::class)]
-class TelegramShareUrlTest extends TestCase
+final class TelegramShareUrlTest extends TestCase
 {
     public function testClass(): void
     {

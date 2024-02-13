@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(WhatsAppShareUrl::class)]
-class WhatsAppShareUrlTest extends TestCase
+final class WhatsAppShareUrlTest extends TestCase
 {
     public function testClass(): void
     {

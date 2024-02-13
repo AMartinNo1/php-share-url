@@ -20,8 +20,11 @@ final class XShareUrl implements \Stringable
     /**
      * @param array<string> $hashtags
      */
-    public function __construct(private string $url = '', private string $text = '', array $hashtags = [])
-    {
+    public function __construct(
+        private readonly string $url = '',
+        private readonly string $text = '',
+        array $hashtags = []
+    ) {
         foreach ($hashtags as $hashtag)
         {
             if (!is_string($hashtag)) {
