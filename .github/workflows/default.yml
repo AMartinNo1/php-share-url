@@ -3,59 +3,71 @@ on: [ push ]
 
 jobs:
   phpstan:
-    runs-on: ubuntu-20.04
-    name: PHPStan
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions:
+          - { php: 8.3 }
+
+    name: "Run PHPStan with PHP ${{ matrix.php-versions.php }}"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php-versions.php }}"
+          coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Switch default PHP Version to 8.3
-        run: sudo update-alternatives --set php /usr/bin/php8.3
+      - uses: "ramsey/composer-install@v2"
 
-      - name: Install Composer dependencies
-        run: composer install
-
-      - name: PHPStan
+      - name: "Run PHPStan"
         run: vendor/bin/phpstan
 
   composer_normalize:
-    runs-on: ubuntu-20.04
-    name: composer normalize
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions:
+          - { php: 8.3 }
+
+    name: "Run composer normalize with PHP ${{ matrix.php-versions.php }}"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php-versions.php }}"
+          coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Switch default PHP Version to 8.3
-        run: sudo update-alternatives --set php /usr/bin/php8.3
+      - uses: "ramsey/composer-install@v2"
 
-      - name: Install Composer dependencies
-        run: composer install
-
-      - name: Normalize
+      - name: "Run composer normalize"
         run: composer normalize
 
   phpunit:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        version:
-          - /usr/bin/php8.2
-          - /usr/bin/php8.3
-    runs-on: ubuntu-20.04
-    name: "PHPUnit with ${{ matrix.version }}"
+        php-versions:
+          - { php: 8.2 }
+          - { php: 8.3 }
+
+    name: "Run PHPUnit with PHP ${{ matrix.php-versions.php }}"
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php-versions.php }}"
+          coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Switch default PHP to: ${{ matrix.version }}"
-        run: sudo update-alternatives --set php ${{ matrix.version }}
+      - uses: "ramsey/composer-install@v2"
 
-      - name: "Install Composer dependencies"
-        run: composer install
-
-      - name: "Print versions"
+      - name: "Print versions and run"
         run: |
           php --version
           vendor/bin/phpunit --version
-
-      - name: "PHPUnit"
-        run: vendor/bin/phpunit
+          vendor/bin/phpunit
