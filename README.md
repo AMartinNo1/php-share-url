@@ -28,4 +28,7 @@ docker run --rm --interactive --tty --volume $PWD:/app composer <command>
 
 # PHPUnit
 docker run -it --rm --name my-running-script -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpunit
+
+# PHPStan
+docker run -it --rm --name my-running-script -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpstan
 ```
