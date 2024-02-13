@@ -5,14 +5,12 @@ declare(strict_types=1);
 namespace Nostadt\ShareUrl\Tests;
 
 use Nostadt\ShareUrl\FacebookShareUrl;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(FacebookShareUrl::class)]
 class FacebookShareUrlTest extends TestCase
 {
-    /**
-     * @return void
-     * @covers \Nostadt\ShareUrl\FacebookShareUrl
-     */
     public function testClass(): void
     {
         self::assertSame(

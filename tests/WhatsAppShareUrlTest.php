@@ -5,14 +5,12 @@ declare(strict_types=1);
 namespace Nostadt\ShareUrl\Tests;
 
 use Nostadt\ShareUrl\WhatsAppShareUrl;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(WhatsAppShareUrl::class)]
 class WhatsAppShareUrlTest extends TestCase
 {
-    /**
-     * @return void
-     * @covers \Nostadt\ShareUrl\WhatsAppShareUrl
-     */
     public function testClass(): void
     {
         self::assertSame(
