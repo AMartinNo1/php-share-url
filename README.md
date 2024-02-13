@@ -14,9 +14,18 @@ Use this package if you want to generate urls, to share stringable
 content from your application and do not want additional JavaScript,
 cookies etc. placed on your application.
 
-
 **Where is social network/messenger X?**
 
 You are invited to create an issue or pull requests with your needs.
 When creating a pull request please have a look at the already existing code
 and don't forget to write a unit test.
+
+## Development
+
+```shell
+# composer
+docker run --rm --interactive --tty --volume $PWD:/app composer <command>
+
+# PHPUnit
+docker run -it --rm --name my-running-script -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpunit
+```
