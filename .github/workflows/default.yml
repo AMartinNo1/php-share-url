@@ -16,7 +16,7 @@ jobs:
         run: composer install
 
       - name: PHPStan
-        run: composer phpstan
+        run: vendor/bin/phpstan
 
   composer_normalize:
     runs-on: ubuntu-20.04
