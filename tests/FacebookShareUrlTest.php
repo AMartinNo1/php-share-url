@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(FacebookShareUrl::class)]
-class FacebookShareUrlTest extends TestCase
+final class FacebookShareUrlTest extends TestCase
 {
     public function testClass(): void
     {

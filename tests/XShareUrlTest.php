@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(XShareUrl::class)]
-class XShareUrlTest extends TestCase
+final class XShareUrlTest extends TestCase
 {
     #[DataProvider('objectProvider')]
     public function testClass(XShareUrl $subject, string $expectation): void

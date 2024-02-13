@@ -7,7 +7,7 @@ namespace Nostadt\ShareUrl;
 /**
  * @see https://threema.ch/en/faq/url_actions
  */
-final class ThreemaShareUrl implements \Stringable
+final readonly class ThreemaShareUrl implements \Stringable
 {
     public function __construct(private string $text)
     {

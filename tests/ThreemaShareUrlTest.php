@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(ThreemaShareUrl::class)]
-class ThreemaShareUrlTest extends TestCase
+final class ThreemaShareUrlTest extends TestCase
 {
     public function testClass(): void
     {
