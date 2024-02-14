@@ -4,17 +4,12 @@ on: [ push ]
 jobs:
   phpstan:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php-versions:
-          - { php: 8.3 }
-
-    name: "Run PHPStan with PHP ${{ matrix.php-versions.php }}"
+    name: "Run PHPStan with PHP 8.3"
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: "${{ matrix.php-versions.php }}"
+          php-version: 8.3
           coverage: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -26,17 +21,12 @@ jobs:
 
   composer_normalize:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php-versions:
-          - { php: 8.3 }
-
-    name: "Run composer normalize with PHP ${{ matrix.php-versions.php }}"
+    name: "Run composer normalize with PHP 8.3"
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: "${{ matrix.php-versions.php }}"
+          php-version: 8.3
           coverage: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
