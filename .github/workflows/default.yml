@@ -43,6 +43,7 @@ jobs:
         php-versions:
           - { php: 8.2 }
           - { php: 8.3 }
+          - { php: 8.4 }
 
     name: "Run PHPUnit with PHP ${{ matrix.php-versions.php }}"
     steps:
