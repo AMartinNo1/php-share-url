@@ -24,11 +24,11 @@ and don't forget to write a unit test.
 
 ```shell
 # composer
-docker run --rm --interactive --tty --volume $PWD:/app composer <command>
+docker run --rm --interactive --tty --volume $PWD:/app composer install
 
 # PHPUnit
-docker run -it --rm --name my-running-script -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpunit
+docker run -it --rm --name php-share-url -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpunit
 
 # PHPStan
-docker run -it --rm --name my-running-script -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpstan
+docker run -it --rm --name php-share-url -v "$PWD":/app -w /app php:8.3-cli php vendor/bin/phpstan
 ```
